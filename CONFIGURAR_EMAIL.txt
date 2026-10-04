@@ -1,0 +1,40 @@
+CONFIGURAÇÃO DO AVISO DE NOVA MATRÍCULA
+=========================================
+
+1) Abra:
+   config/bootstrap.php
+
+2) Localize:
+   ADMIN_EMAIL
+   SMTP_USER
+   SMTP_PASS
+
+3) Coloque o e-mail que deve RECEBER os avisos em ADMIN_EMAIL.
+
+4) Em SMTP_USER coloque a conta que o site usará para ENVIAR os e-mails.
+   Em SMTP_PASS coloque a senha SMTP dessa conta.
+   NÃO envie essa senha para ninguém.
+
+Configuração padrão incluída para Gmail:
+   SMTP_HOST = smtp.gmail.com
+   SMTP_PORT = 587
+
+IMPORTANTE:
+- Para Gmail, normalmente é necessário usar uma SENHA DE APP no SMTP,
+  em vez da senha normal da conta.
+- O XAMPP/Apache precisa ter suporte a OpenSSL/TLS habilitado.
+- O aviso de matrícula gratuita é enviado no momento da matrícula.
+- O aviso de matrícula paga é enviado quando o Mercado Pago confirma
+  o pagamento como aprovado.
+- O sistema grava admin_notified_at para não mandar o mesmo aviso
+  novamente quando o webhook for repetido.
+
+O e-mail enviado contém:
+- nome do aluno
+- e-mail do aluno
+- curso
+- valor
+- status
+- data/hora da matrícula
+
+O sistema não grava a senha SMTP no banco de dados.

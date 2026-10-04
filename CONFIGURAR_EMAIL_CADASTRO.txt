@@ -1,0 +1,21 @@
+CONFIGURAÇÃO DO AVISO DE NOVO ALUNO - HEAL
+
+1. O sistema já está configurado para enviar um e-mail para:
+   edsonnetto964@gmail.com
+
+2. O aviso é disparado quando o cadastro do aluno é concluído com sucesso.
+
+3. Para o Gmail funcionar, abra config/bootstrap.php e preencha:
+
+   const SMTP_USER = 'edsonnetto964@gmail.com';
+   const SMTP_PASS = 'SUA_SENHA_DE_APP_DO_GOOGLE';
+
+4. SMTP_HOST deve permanecer smtp.gmail.com e SMTP_PORT 587.
+
+5. A senha deve ser uma SENHA DE APP do Google, e não a senha normal do Gmail.
+   Acesse: https://myaccount.google.com/apppasswords
+   Para criar senha de app, a Verificação em duas etapas da conta Google precisa estar ativa.
+
+6. Não compartilhe sua senha de app.
+
+7. Se o e-mail não chegar, verifique o log do Apache/PHP do XAMPP para o erro SMTP.

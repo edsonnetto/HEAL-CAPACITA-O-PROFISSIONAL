@@ -1,0 +1,14 @@
+HEAL - FLUXO DE MATRÍCULA PAGA COM LIBERAÇÃO MANUAL
+
+1. O aluno escolhe um curso pago e inicia a matrícula.
+2. O sistema cria a matrícula como "pending" (aguardando liberação).
+3. O sistema envia um e-mail para ADMIN_EMAIL com nome, e-mail, curso, valor e pedido de liberação.
+4. O pagamento pode ser confirmado pelo Mercado Pago (webhook) ou manualmente no painel.
+5. Mesmo com o pagamento aprovado, o acesso NÃO é liberado automaticamente.
+6. No painel Admin > Pagamentos, aparecerá "Liberar acesso" quando o pagamento estiver aprovado.
+7. Ao clicar em "Liberar acesso", a matrícula passa para "active" e o aluno poderá acessar as aulas.
+
+IMPORTANTE:
+- O e-mail SMTP deve continuar configurado em config/bootstrap.php.
+- SMTP_PASS deve ser a SENHA DE APP do Google, nunca a senha normal da conta.
+- O teste de e-mail continua disponível em teste-email.php.

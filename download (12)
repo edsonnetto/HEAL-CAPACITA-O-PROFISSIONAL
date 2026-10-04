@@ -1,0 +1,24 @@
+# Ambiente local
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# XAMPP / IDE
+.vscode/
+.idea/
+
+# Arquivos gerados e uploads de usuários
+htdocs/uploads/videos/*
+htdocs/uploads/pdfs/*
+htdocs/uploads/courses/*
+!htdocs/uploads/videos/.gitkeep
+!htdocs/uploads/pdfs/.gitkeep
+!htdocs/uploads/courses/.gitkeep
+
+# Backups do banco
+*.sql.bak
+*.dump
+*.zip
+*.rar

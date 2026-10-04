@@ -1,0 +1,8 @@
+Options -Indexes
+<FilesMatch "\.(php|phtml|php[0-9]*)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(pdf)$">
+  Require all granted
+</FilesMatch>

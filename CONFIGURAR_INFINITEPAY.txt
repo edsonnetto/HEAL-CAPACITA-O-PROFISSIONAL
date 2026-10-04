@@ -1,0 +1,15 @@
+CONFIGURAÇÃO DA INFINITEPAY NO HEAL
+
+1. No App/site da InfinitePay, habilite o Checkout Integrado.
+2. Pegue sua InfiniteTag (Handle), sem o símbolo $.
+3. Abra config/bootstrap.php.
+4. Preencha: const INFINITEPAY_HANDLE = 'SUA_INFINITETAG';
+5. Salve e teste um curso pago.
+
+FLUXO
+Aluno cria matrícula -> HEAL cria checkout InfinitePay -> aluno paga -> HEAL confirma o pagamento -> administrador recebe e-mail -> administrador clica em Liberar acesso -> aluno recebe e-mail e pode acessar as aulas.
+
+IMPORTANTE SOBRE LOCALHOST
+O retorno do checkout pode voltar para localhost no navegador. Já o webhook da InfinitePay precisa de uma URL pública para ser acessado pelos servidores da InfinitePay. Em produção, hospede o HEAL em um domínio HTTPS e configure o webhook automaticamente pela URL gerada pelo sistema.
+
+Acesso NÃO é liberado automaticamente após o pagamento.
